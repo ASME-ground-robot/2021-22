@@ -44,8 +44,12 @@ How to edit markdown files - https://www.markdownguide.org/cheat-sheet
 ## 4. Installation instructions
 
   1. Open up a terminal on your linux machine.
-  2. Go to your current workspace src folder
-  3. cd your_ws/src
-  4. git clone https://github.com/j-505/2021-22.git
-  5. cd your_ws ..
-  6. source devel/setup.bash
+  2. mkdir -p ~/catkin_ws/src
+  3. cd ~/catkin_ws/
+  4. catkin_make
+  5. cd ~/catkin_ws/src
+  6. git clone https://github.com/j-505/2021-22.git
+  7. cd ~/catkin_ws/
+  8. catkin_make
+  9. cd ~/catkin_ws/
+  10. source devel/setup.bash

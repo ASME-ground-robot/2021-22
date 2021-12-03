@@ -1,7 +1,7 @@
 # 2021-22 version of software for the Ground Robot at Cal State LA (Robotics Laboratory, ASME Student Org)
 How to edit markdown files - https://www.markdownguide.org/cheat-sheet
 
-## 1 What's included in the package?
+## 1. What's included in the package?
 - This package is a detailed outline of the software files needed to run the Senior Design Mars Rover from California State University, Los Angeles.
   The package is dedicated to ROS 1 and the Ubuntu version is 18.04.
   

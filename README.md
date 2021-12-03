@@ -2,10 +2,9 @@
 How to edit markdown files - https://www.markdownguide.org/cheat-sheet
 
 ## 1. Introduction of the robot  
-- hardware - Jetson TX II, four indevidually controlled wheels, one robot arm (scorbot-er4u)  
+
 - hardware - Jetson TX II, four individually controlled wheels, one robot arm (scorbot-er3u)  
 - software - Ubuntu 18.04, ROS  
-- sensors - IMU, GPS, Lidar, <complete this list>  
 - sensors - IMU, GPS, Lidar, Antenna, Transceiver, Camera, Encoders
 
 ## 2. Software organization  

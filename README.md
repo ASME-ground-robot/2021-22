@@ -50,6 +50,4 @@ How to edit markdown files - https://www.markdownguide.org/cheat-sheet
   5. cd ~/catkin_ws/src
   6. git clone https://github.com/j-505/2021-22.git
   7. cd ~/catkin_ws/
-  8. catkin_make
-  9. cd ~/catkin_ws/
-  10. source devel/setup.bash
+  8. source devel/setup.bash

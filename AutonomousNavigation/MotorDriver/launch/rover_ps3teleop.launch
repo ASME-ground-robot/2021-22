@@ -8,6 +8,6 @@
     <param name="dev" type="string" value="/dev/input/js0" />
 </node>
 
-<node pkg="rover" type="joystick_teleop.py" name="teleop"/>
+<node pkg="rover" type="ps3joystick_teleop.py" name="teleop"/>
 
 </launch>

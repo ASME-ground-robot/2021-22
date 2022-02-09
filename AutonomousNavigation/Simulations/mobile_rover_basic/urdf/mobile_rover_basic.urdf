@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="mobile_rover_basic">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="5.45304205679109E-08 0 -0.0321356608324926"
+        rpy="0 0 0" />
+      <mass
+        value="1.44575959759505" />
+      <inertia
+        ixx="0.00249050571816598"
+        ixy="-2.34883930223575E-19"
+        ixz="-9.40774512376249E-09"
+        iyy="0.00436429199167526"
+        iyz="1.00269772646852E-20"
+        izz="0.00583528649857964" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_rover_basic/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_rover_basic/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="frontleftwheel">
+    <inertial>
+      <origin
+        xyz="2.7756E-17 0.012802 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.080903" />
+      <inertia
+        ixx="2.4748E-05"
+        ixy="-2.5222E-22"
+        ixz="-1.8986E-21"
+        iyy="4.0548E-05"
+        iyz="8.4881E-23"
+        izz="2.4748E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_rover_basic/meshes/frontleftwheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_rover_basic/meshes/frontleftwheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="frontleft"
+    type="continuous">
+    <origin
+      xyz="0.10303 -0.10414 -0.095827"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="frontleftwheel" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="backleftwheel">
+    <inertial>
+      <origin
+        xyz="0 0.012802 -1.3878E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.080903" />
+      <inertia
+        ixx="2.4748E-05"
+        ixy="2.3047E-22"
+        ixz="7.783E-22"
+        iyy="4.0548E-05"
+        iyz="7.6363E-23"
+        izz="2.4748E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_rover_basic/meshes/backleftwheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_rover_basic/meshes/backleftwheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="backleft"
+    type="continuous">
+    <origin
+      xyz="-0.103 -0.10414 -0.09587"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="backleftwheel" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="backrightwheel">
+    <inertial>
+      <origin
+        xyz="0 -0.012802 -1.3878E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.080903" />
+      <inertia
+        ixx="2.4748E-05"
+        ixy="-7.7901E-22"
+        ixz="-2.5643E-23"
+        iyy="4.0548E-05"
+        iyz="-7.7455E-25"
+        izz="2.4748E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_rover_basic/meshes/backrightwheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_rover_basic/meshes/backrightwheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="backright"
+    type="continuous">
+    <origin
+      xyz="-0.103 0.10414 -0.09587"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="backrightwheel" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="frontrightwheel">
+    <inertial>
+      <origin
+        xyz="2.7756E-17 -0.012802 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.080903" />
+      <inertia
+        ixx="2.4748E-05"
+        ixy="-2.6023E-22"
+        ixz="2.8642E-22"
+        iyy="4.0548E-05"
+        iyz="-4.2618E-22"
+        izz="2.4748E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_rover_basic/meshes/frontrightwheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_rover_basic/meshes/frontrightwheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="frontright"
+    type="continuous">
+    <origin
+      xyz="0.10303 0.10414 -0.095827"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="frontrightwheel" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+</robot>

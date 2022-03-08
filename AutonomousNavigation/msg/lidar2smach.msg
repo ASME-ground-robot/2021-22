@@ -1,2 +1,1 @@
-int16 lidar2smachnum
-
+uint16[] lazer

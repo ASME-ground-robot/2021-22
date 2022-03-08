@@ -1,6 +1,6 @@
-float32 current_latitude
-float32 current_longitude
-float32 current_distance
+float32 current_lat
+float32 current_long
+float32 current_dist
 float32 current_yaw
 float32 current_mag_yaw
 float32 current_pitch

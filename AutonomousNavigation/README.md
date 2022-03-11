@@ -12,9 +12,9 @@ Codes used for Teleoperation
 - teleop - joystick control codes for manual control using PS3 controllers
 ## 4. Sensors
 Codes to read data from all sensors [GPS/IMU/LIDAR]
-## 4. Simulations
+## 5. Simulations
 Rviz/Gazebo packages to simulate simple rover and environment
-## 5. StateMachines
+## 6. StateMachines
 Template nodes to be used for Autonomous Navigation
-## 6. msg
+## 7. msg
 Message files to read sensor data

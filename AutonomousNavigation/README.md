@@ -10,9 +10,11 @@ AR tag image recognition using OpenCV.
 Codes used for Teleoperation
 - launch - Launch file to start all necessary codes/packages for Teleoperation
 - teleop - joystick control codes for manual control using PS3 controllers
+## 4. Sensors
+Codes to read data from all sensors [GPS/IMU/LIDAR]
 ## 4. Simulations
 Rviz/Gazebo packages to simulate simple rover and environment
 ## 5. StateMachines
 Template nodes to be used for Autonomous Navigation
 ## 6. msg
-message files to read sensor data
+Message files to read sensor data

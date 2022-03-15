@@ -39,7 +39,7 @@ How to edit markdown files - https://www.markdownguide.org/cheat-sheet
 ## 4. Installation instructions
 
   1. Open up a terminal on your linux machine.
-  2. mkdir -p ~/catkin_ws/src
+  2. mkdir -p ~/catkin_ws/src (some simulations/packages in the folder will need to be recreated because of workspace name change)
   3. cd ~/catkin_ws/
   4. catkin_make
   5. cd ~/catkin_ws/src

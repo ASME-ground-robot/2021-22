@@ -14,25 +14,20 @@ How to edit markdown files - https://www.markdownguide.org/cheat-sheet
 ## 3. Software organization  
 
   ### Autonomous Navigation
-  - State Machines
-    - test
-    - path planning
-    - waypoint Navigation
-  - Lidar
-    - test
-    - code
-  - GPS
-    - test
-    - code
+  - Arduino
+    - Autonav_driver
+    - Teleop_MotorControl
   - Computer Vision
-    - test
-    - code
-  - IMU Sensor
-    - test
-    - code
+    - cv (OpenCV)
   - Motor Driver
-    - test
-    - joystick
+    - joystick_teleop
+  - Sensors
+  - Simulations
+    - mobile_rover_basic
+  - State Machines
+  - Launch
+    - rover_teleop
+  - Msg
   ### Robotic Arm
   - Simulations
     - moveit

@@ -42,7 +42,7 @@ const int LED1 = 11; //Teleoperation Mode LED-> ON
 void messageCb(const std_msgs::Int16MultiArray &msg)
 {
   // assuming data.axes are mapped between -1.0 and 1.0
-
+  DZL = 0.1;
   if (b[1] > DZL) 			// Forward
   {
     R =  100*b[1]*b[4];

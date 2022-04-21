@@ -13,21 +13,29 @@ def teleop(data):
     pub = rospy.Publisher('py_control', Int16MultiArray, queue_size = 1)
 
 
-        b = [0,0,0,0,0]
-        Msg = Int16MultiArray()
-        b = [data.axes[1],data.axes[0],data.axes[4],data.axes[3],1]
-        // b = [FB,LR,Speed 1 and 3,Speed 2 and 4,Current Speed]
-        if data.axes[4] > 0.9:
-        b[4] = 2
-        if data.axes[4] < -0.9:
-        b[4] = 4
-        if data.axes[3] < -0.9:
-        b[4] = 3
-        If data.axes[3] > 0.9:
-        b[4] = 1
+    b = [0,0,0,0,0]
+    msg = Int16MultiArray()
 
-        msg.data = b
-        pub.publish(msg)
+    b = [data.axes[1],data.axes[0],data.axes[4],data.axes[3],1]
+    
+    if (data.axes[4] > 0.9)
+    {
+      b[4] = 2
+    }
+    if (data.axes[4] < -0.9)
+    {
+      b[4] = 4
+    }
+    if (data.axes[3] < -0.9)
+    {
+      b[4] = 3
+    }
+    if (data.axes[3] > 0.9)
+    {
+      b[4] = 1
+    }
+    msg.data = b
+    pub.publish(msg)
 
 if __name__ == '__main__':
     try:

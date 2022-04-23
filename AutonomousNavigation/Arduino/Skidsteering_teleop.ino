@@ -38,22 +38,23 @@ DualVNH5019MotorShieldMod3 md(INA1, INB1, EN1DIAG1, CS1, INA2, INB2, EN2DIAG2, C
 
 const int LED1 = 11; //Teleoperation Mode LED-> ON
 
+//=========================================================================================================================================================
 
 void messageCb(const std_msgs::Int16MultiArray &msg)
 {
-  // assuming data.axes are mapped between -1.0 and 1.0
+  // assuming msg.data are mapped between -1.0 and 1.0
   DZL = 0.1;
-  if (b[1] > DZL) 			// Forward
+  if (msg.data[1] > DZL) 			// Forward
   {
-    R =  100*b[1]*b[4];
-    L = 100*b[1]*b[4];
-    if (b[0] < -DZL)
+    R =  100*msg.data[1]*msg.data[4];
+    L = 100*msg.data[1]*msg.data[4];
+    if (msg.data[0] < -DZL)
     {
-    R = R - R*b[0];
+    R = R - R*msg.data[0];
     }
-    if (b[0] > DZL)
+    if (msg.data[0] > DZL)
     {
-    L = L - L*b[0];
+    L = L - L*msg.data[0];
     }
     md.setM1speed(R);
     md.setM2speed(R);
@@ -62,17 +63,17 @@ void messageCb(const std_msgs::Int16MultiArray &msg)
   }
 
 
-  if (b[1] < DZL)     //Backward
+  if (msg.data[1] < -DZL)     //Backward
   {
-    R =  100*b[1]*b[4];
-    L = 100*b[1]*b[4];
-    if (b[0] < -DZL)
+    R =  100*msg.data[1]*msg.data[4];
+    L = 100*msg.data[1]*msg.data[4];
+    if (msg.data[0] < -DZL)
     {
-    R = R + R*b[0];
+    R = R + R*msg.data[0];
     }
-    if (b[0] > DZL)
+    if (msg.data[0] > DZL)
     {
-    L = L + L*b[0];
+    L = L + L*msg.data[0];
     }
     md.setM1speed(R);
     md.setM2speed(R);
@@ -81,31 +82,33 @@ void messageCb(const std_msgs::Int16MultiArray &msg)
   }
 
 
-  if (b[1] < DZL && b[1] > -DZL && b[0] > DZL)
+  if (msg.data[1] < DZL && msg.data[1] > -DZL && msg.data[0] > DZL)  // point turn left
   {
-    R = 100*b[0]*b[4];
-    L = 100*b[0]*b[4];
+    R = 100*b[0]*msg.data[4];
+    L = 100*msg.data[0]*msg.data[4];
     md.setM1speed(R);
     md.setM2speed(R);
     md.setM3speed(L);
     md.setM4speed(L);
   }
 
-  if (b[1] < DZL && b[1] > -DZL && b[0] < -DZL)
+  if (msg.data[1] < DZL && msg.data[1] > -DZL && msg.data[0] < -DZL)  //point turn right
   {
-    R = 100*b[0]*b[4];
-    L = 100*b[0]*b[4];
+    R = 100*b[0]*msg.data[4];
+    L = 100*msg.data[0]*msg.data[4];
     md.setM1speed(-R);
     md.setM2speed(-R);
     md.setM3speed(-L);
     md.setM4speed(-L);
   }
 
-  if (b[1] > DZL || b[1] < -DZL || b[0] > DZL || b[0] < -DZL ) 
+  if (msg.data[1] > DZL || msg.data[1] < -DZL || msg.data[0] > DZL || msg.data[0] < -DZL ) 
   {
       digitalWrite(LED1,HIGH);
   }
 }
+
+//=====================================================================================================================================
 
 //py_control is the topic name of the publisher
 ros::Subscriber<std_msgs::Int16MultiArray> sub("py_control", &messageCb);

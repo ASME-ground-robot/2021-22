@@ -1,5 +1,5 @@
 # Modified Arduino library for the Pololu Dual G2 High Power Motor Driver Shields.
-## Modified by Richard Cortez
+### Modified by Richard Cortez
 
 ## Summary
 

@@ -1,4 +1,4 @@
-# 2021-22 version of software for the Ground Robot at Cal State LA (Robotics Laboratory, ASME Student Org)
+# 2021-22 version of software for the Mars Rover Senior Design Project at Cal State LA (Robotics Laboratory, ASME Student Org)
 How to edit markdown files - https://www.markdownguide.org/cheat-sheet
 
 ## 1. What's included in the package?

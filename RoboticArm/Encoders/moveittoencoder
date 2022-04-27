@@ -1,3 +1,5 @@
+// The following is the Arduino Code for the SCORBOT-ER 3 arm 
+
 //You can use the PID library instead of applying the simple PID.
 class SimplePID{
   private:

@@ -16,8 +16,8 @@ def teleop(data):
 #		    reverse, 
 #		    point turn left,
 #		    point turn right, 
-#		    skid left, 
-#		    skid right, 
+#		    strafe left, 
+#		    strafe right, 
 #		    speed]
 
     b = [0,0,0,0,0,0,0]

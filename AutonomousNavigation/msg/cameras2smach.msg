@@ -1,1 +1,0 @@
-int16 cameras2smachnum

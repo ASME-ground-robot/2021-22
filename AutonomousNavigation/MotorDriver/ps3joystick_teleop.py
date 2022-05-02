@@ -12,27 +12,40 @@ def startup():
 def teleop(data):
     pub = rospy.Publisher('py_control', Int16MultiArray, queue_size = 1)
 
-    b = [0,0,0,0,0]
+# for reference: b=[foward, 
+#		    reverse, 
+#		    point turn left,
+#		    point turn right, 
+#		    strafe left, 
+#		    strafe right, 
+#		    speed]
+
+    b = [0,0,0,0,0,0,0]
     msg = Int16MultiArray()
 
     if data.axes[1] == 1:
-        b = [1,0,0,0,1]
+        b = [1,0,0,0,0,0,1]
     if data.axes[1] == -1:
-        b = [0,1,0,0,1]
+        b = [0,1,0,0,0,0,1]
     if data.axes[0] == 1:
-        b = [0,0,1,0,1]
+        b = [0,0,1,0,0,0,1]
     if data.axes[0] == -1:
-        b = [0,0,0,1,1]
+        b = [0,0,0,1,0,0,1]
+
+    if data.buttons[10] == 1:
+        b = [0,0,0,0,1,0,1]
+    if data.buttons[11] == 1:
+        b = [0,0,0,0,0,1,1]
+
     if data.axes[3] == 1:
-        b[4] = 2
-    if data.axes[3] == -1:
-        b[4] = 4
+        b[6] = 2
     if data.axes[2] == -1:
-        b[4] = 3
+        b[6] = 3
+    if data.axes[3] == -1:
+        b[6] = 4
+
     msg.data = b
     pub.publish(msg)
-    #rate = rospy.Rate(10)
-    #rate.sleep()
 
 if __name__ == '__main__':
     try:

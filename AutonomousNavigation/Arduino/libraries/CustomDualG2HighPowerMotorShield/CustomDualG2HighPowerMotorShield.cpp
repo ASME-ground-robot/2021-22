@@ -9,27 +9,31 @@ boolean DualG2HighPowerMotorShield::_flipM4 = false;
 
 DualG2HighPowerMotorShield::DualG2HighPowerMotorShield()
 {
-  _M1nSLEEP = 29;
-  _M1nFAULT = 31;
-  _M1DIR = 33;
+//Green: Top MD
+  _M1nSLEEP = 25;
+  _M1nFAULT = 23;
+  _M1DIR = 27;
   _M1PWM = 9;
   _M1CS = A0;
-
-  _M2nSLEEP = 23;
-  _M2nFAULT = 25;
-  _M2DIR = 27;
+	
+//Yellow: Top MD
+  _M2nSLEEP = 31;
+  _M2nFAULT = 29;
+  _M2DIR = 33;
   _M2PWM = 10;
   _M2CS = A1;
   
-  _M3nSLEEP = 28;
-  _M3nFAULT = 30;
-  _M3DIR = 32;
+//Blue: Bottom MD
+  _M3nSLEEP = 24;
+  _M3nFAULT = 22;
+  _M3DIR = 26;
   _M3PWM = 45;
   _M3CS = A2;
   
-  _M4nSLEEP = 22;
-  _M4nFAULT = 24;
-  _M4DIR = 26;
+//Orange: Bottom MD
+  _M4nSLEEP = 30;
+  _M4nFAULT = 28;
+  _M4DIR = 32;
   _M4PWM = 46;
   _M4CS = A3;
 }

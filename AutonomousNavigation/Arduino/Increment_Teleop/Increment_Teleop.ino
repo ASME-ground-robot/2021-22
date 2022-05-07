@@ -25,7 +25,7 @@ void messageCb(const std_msgs::Int16MultiArray &msg) {
     md.enableDrivers();
     delay(1);
     if (i <= 100*vel) {
-      i = i + 5;
+      i = i + 15;
       md.setM1Speed(i); //BL
       md.setM2Speed(i); //FL
       md.setM3Speed(i); //FR
@@ -37,7 +37,7 @@ void messageCb(const std_msgs::Int16MultiArray &msg) {
     md.enableDrivers();
     delay(1);
     if (i <= 100*vel) {
-      i = i + 5;
+      i = i + 15;
       md.setM1Speed(-i); //BL
       md.setM2Speed(-i); //FL
       md.setM3Speed(-i); //FR
@@ -48,34 +48,35 @@ void messageCb(const std_msgs::Int16MultiArray &msg) {
   else if (left == 1) {
     md.enableDrivers();
     delay(1);
-    if (i <= 100*vel) {
-      i = i + 20;
-      md.setM1Speed(-i); //BL
-      md.setM2Speed(-i); //FL
-      md.setM3Speed(i); //FR
-      md.setM4Speed(i); //BR
-      stopIfFault();
+    
+    i = 100*vel;
+    md.setM1Speed(-i); //BL
+    md.setM2Speed(-i); //FL
+    md.setM3Speed(i); //FR
+    md.setM4Speed(i); //BR
+    stopIfFault();
     }
   }
   else if (right == 1) {
     md.enableDrivers();
     delay(1);
-    if (i <= 100*vel) {
-      i = i + 20;
-      md.setM1Speed(i); //BL
-      md.setM2Speed(i); //FL
-      md.setM3Speed(-i); //FR
-      md.setM4Speed(-i); //BR
-      stopIfFault();
+    
+    i = 100*vel;
+    md.setM1Speed(i); //BL
+    md.setM2Speed(i); //FL
+    md.setM3Speed(-i); //FR
+    md.setM4Speed(-i); //BR
+    stopIfFault();
     }
   }
+  /*
   else if (skidleft == 1) {
     md.enableDrivers();
     delay(1);
     if (i <= 100*vel) {
-      i = i + 5;
-      md.setM1Speed(-i/4); //BL
-      md.setM2Speed(-i/4); //FL
+      i = i + 15;
+      md.setM1Speed(-i/3); //BL
+      md.setM2Speed(-i/3); //FL
       md.setM3Speed(i); //FR
       md.setM4Speed(i); //BR
       stopIfFault();
@@ -85,14 +86,15 @@ void messageCb(const std_msgs::Int16MultiArray &msg) {
     md.enableDrivers();
     delay(1);
     if (i <= 100*vel) {
-      i = i + 5;
+      i = i + 15;
       md.setM1Speed(i); //BL
       md.setM2Speed(i); //FL
-      md.setM3Speed(-i/4); //FR
-      md.setM4Speed(-i/4); //BR
+      md.setM3Speed(-i/3); //FR
+      md.setM4Speed(-i/3); //BR
       stopIfFault();
     }
   }
+  */
   else if (foward != 1 && reverse != 1 && left != 1 && right != 1 && skidleft != 1 && skidright != 1) {
     i = 0;
     md.setM1Speed(i); //BL

@@ -4,7 +4,10 @@
 
 #include <NMEAGPS.h>
 #include <Wire.h>
-#include <LIS3MDL.h>
+#include <Adafruit_Sensor.h>
+#include <Adafruit_BNO055.h>
+#define BNO055_SAMPLERATE_DELAY_MS (100)
+Adafruit_BNO055 bno = Adafruit_BNO055();
 
 ros::NodeHandle nh;
 rover::sensors2smach sensor_data;
@@ -17,7 +20,6 @@ ros::Publisher sensorpub("sensors2smach", &sensor_data);
    Connect Vin to 5V DC
    Connect GND to common ground
 */
-LIS3MDL mag;
 
 /* GPS Connections
    ===========
@@ -30,7 +32,7 @@ LIS3MDL mag;
 NMEAGPS gps;
 #define gpsPort Serial1
 
-/*z
+/*
 double Distance;
 double Heading;
 void Outputs(const rover::smach2controls& setpoint_data) {
@@ -54,12 +56,12 @@ void setup() {
 }
 
 void InitializeSensors() {
-  Wire.begin();
-  if (!mag.init()) {
-    Serial.println("Failed to detect and initialize magnetometer!");
+  Wire.beginTransmission(0x28);
+  if (!bno.begin()) {
+    Serial.print("Oof, no BNO055 detected ... Check your wiring or I2C ADDR, dumbass! You're garbage. Git gud, kid. ");
     while (1);
   }
-  mag.enableDefault();
+  bno.setExtCrystalUse(true);
   gpsPort.begin(9600);
 }
 
@@ -77,20 +79,22 @@ void Sensor_Data() {
       Serial.print("Longitude: "); Serial.println( fix.longitude(), 6 );
 
       
-      mag.read();
-      float headingRad = atan2(mag.m.y, mag.m.x);
-      float headingDeg = headingRad*180/PI;
+      imu::Vector<3> euler = bno.getVector(Adafruit_BNO055::VECTOR_MAGNETOMETER);
+      float headingDeg = atan2(euler.y(), euler.x())*180/PI;
       float declinationAngle = 11.76666666666;
   
-      headingDeg += declinationAngle;
+      headingDeg = headingDeg + declinationAngle;
   
       if (headingDeg < 0) {
-        headingDeg += 360;
-        }
+        headingDeg = headingDeg + 360;
+      }
+      if (headingDeg > 360) {
+        headingDeg = headingDeg - 360;
+      }
 
       Serial.print("Angle: "); Serial.println(headingDeg);
       Serial.println("");
-
+      
       
       sensor_data.current_yaw = headingDeg;
       sensorpub.publish(&sensor_data);

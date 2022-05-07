@@ -23,12 +23,14 @@ int count = 0;
 double goal_yaw;
 double goal_distance;
 
+/*
 void Goals(const rover::smach2controls& setpoint_data) {
-  //goal_yaw = setpoint_data.yaw_setpoint;
-  //goal_distance = setpoint_data.distance_setpoint;
+  goal_yaw = setpoint_data.yaw_setpoint;
+  goal_distance = setpoint_data.distance_setpoint;
 }
 
 ros::Subscriber <rover::smach2controls> sub("smach2controls", Goals);
+*/
 
 #define ENCA A15
 int tick = 0;
@@ -71,13 +73,13 @@ void setup() {
   
   nh.getHardware()->setBaud(115200);
   nh.initNode();
-  nh.subscribe(sub);
+  //nh.subscribe(sub);
 }
 
 void InitializeSensor() {
   Wire.beginTransmission(0x28);
   if (!bno.begin()) {
-    Serial.print("Oof, no BNO055 detected ... Check your wiring or I2C ADDR, dumbass! You're garbage. Git gud, kid. ");
+    Serial.print("Oof, no BNO055 detected ... Check your wiring or I2C Address!");
     while (1);
   }
   bno.setExtCrystalUse(true);
@@ -120,18 +122,20 @@ void Outputs() {
     
     if (headingDeg < goal_yaw - 0.5) {
       Serial.println("Turning right...");
-      md.setM1Speed(50); //BL
-      md.setM2Speed(50); //FL
-      md.setM3Speed(-50); //FR
-      md.setM4Speed(-50); //BR
+      i = 150;
+      md.setM1Speed(i); //BL
+      md.setM2Speed(i); //FL
+      md.setM3Speed(-i); //FR
+      md.setM4Speed(-i); //BR
       stopIfFault();
     }
     else if (headingDeg > goal_yaw + 0.5) {
       Serial.println("Turning left...");
-      md.setM1Speed(-50); //BL
-      md.setM2Speed(-50); //FL
-      md.setM3Speed(50); //FR
-      md.setM4Speed(50); //BR
+      i = 150;
+      md.setM1Speed(-i); //BL
+      md.setM2Speed(-i); //FL
+      md.setM3Speed(i); //FR
+      md.setM4Speed(i); //BR
       stopIfFault();
     }
     else {
@@ -152,21 +156,22 @@ void Outputs() {
      if (currentstate > laststate - 2) {
        tick --;
      }
-     float ticks_per_revo = 25;
+     float ticks_per_revo = 125;
      float ratio = tick/ticks_per_revo;
-     float wheel_radius = 0.127; //m
-     float encoder_dist = 2*3.14*wheel_radius*ratio;
+     float wheel_radius = 0.1397; //m
+     float encoder_dist = 2*PI*wheel_radius*ratio;
      
     if (encoder_dist < goal_distance) {
       Serial.println("Driving foward...");
-      if (i <= 100) {
-        i = i + 5;
-        md.setM1Speed(i); //BL
-        md.setM2Speed(i); //FL
-        md.setM3Speed(i); //FR
-        md.setM4Speed(i); //BR
-        stopIfFault();
-      }
+
+      i = 100 ;
+      md.setM1Speed(i); //BL
+      md.setM2Speed(i); //FL
+      md.setM3Speed(i); //FR
+      md.setM4Speed(i); //BR
+      stopIfFault();
+      
+      laststate = currentstate;
     }
     else {
       i = 0;
@@ -174,8 +179,7 @@ void Outputs() {
       md.setM2Speed(i); //FL
       md.setM3Speed(i); //FR
       md.setM4Speed(i); //BR
-      count = 2; // change to 1 if you want repeatable waypoint nav from ros data
+      count = 2; // change to 1 if you want repeatable waypoint nav; only available if receiving yaw/dist from ROS message
     }
-    laststate = currentstate;
   }
 }

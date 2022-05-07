@@ -14,27 +14,10 @@ How to edit markdown files - https://www.markdownguide.org/cheat-sheet
 ## 3. Software organization  
 
   ### Autonomous Navigation
-  - Arduino
-    - Autonav_driver
-    - Teleop_MotorControl
-  - Computer Vision
-    - cv (OpenCV)
-  - Motor Driver
-    - joystick_teleop
-  - Sensors
-  - Simulations
-    - mobile_rover_basic
-  - State Machines
-  - Launch
-    - rover_teleop
-  - Msg
+  - All codes used to control hardware for the rover. Contains important microcontroller codes and libraries as well as codes for teleoperation using joystick, autonomous navigation, sensor data integration, computer vision, and necessary ROS files.
+
   ### Robotic Arm
-  - Simulations
-    - moveit
-    - gazebo
-    - moveittogazebo
-  - Encoder
-    - moveittoencoder
+  - Packages from ROS used to control the robotic arm using simulations. Contains microcontroller code, Moveit (Rviz) simulation packages, and Arm URDF model
 
 ## 4. Installation instructions
 

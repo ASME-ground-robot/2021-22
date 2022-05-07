@@ -9,7 +9,7 @@ ros::NodeHandle nh;
 const int LED1 = 53; //Teleop LED-> ON
 int i = 0;
 
-
+// Where Joystick Data will be received to control motors
 void messageCb(const std_msgs::Int16MultiArray &msg) {
   
   //USB joystick config
@@ -105,15 +105,16 @@ void messageCb(const std_msgs::Int16MultiArray &msg) {
     md.disableDrivers();
     delay(1);
   }
+ // Teleop LED On
   if (foward == 1 || reverse == 1 || left == 1 || right == 1 || skidleft == 1 || skidright == 1) {
      digitalWrite(LED1, HIGH);
   }
 }
 
-//py_control is the topic name of the publisher
+//py_control is the topic name where joystick data is sent from
 ros::Subscriber<std_msgs::Int16MultiArray> sub("py_control", &messageCb);
 
-
+// checks to see if motors are running correctly, otherwise turns them off
 void stopIfFault() {
   if (md.getM1Fault()) {
     md.disableDrivers();

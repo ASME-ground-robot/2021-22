@@ -101,25 +101,11 @@ void Outputs() {
   goal_distance = 2;
   
   if (count == 0) {
-    /*
-    imu::Vector<3> euler = bno.getVector(Adafruit_BNO055::VECTOR_MAGNETOMETER);
-    float headingDeg = atan2(euler.y(), euler.x())*180/PI;
-    float declinationAngle = 11.66;
-  
-    headingDeg = headingDeg + declinationAngle;
-    if (headingDeg < 0) {
-      headingDeg = headingDeg + 360;
-    }
-    if (headingDeg > 360) {
-      headingDeg = headingDeg - 360;
-    }
-    */
     imu::Vector<3> euler = bno.getVector(Adafruit_BNO055::VECTOR_EULER);
     float headingDeg = euler.x() + 0.08;
     if (headingDeg > 360) {
       headingDeg = headingDeg - 360;
     }
-    
     if (headingDeg < goal_yaw - 0.5) {
       Serial.println("Turning right...");
       i = 150;
@@ -147,8 +133,8 @@ void Outputs() {
     }
   }
   
+  
   if (count == 1) {
-    
      currentstate = analogRead(ENCA);
      if (currentstate < laststate + 2) {
        tick++;

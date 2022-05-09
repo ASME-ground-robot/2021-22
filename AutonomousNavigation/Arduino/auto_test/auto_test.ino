@@ -165,7 +165,7 @@ void Outputs() {
       md.setM2Speed(i); //FL
       md.setM3Speed(i); //FR
       md.setM4Speed(i); //BR
-      count = 2; // change to 1 if you want repeatable waypoint nav; only available if receiving yaw/dist from ROS message
+      count = 2; // change to 1 if you want repeatable waypoint nav;
     }
   }
 }

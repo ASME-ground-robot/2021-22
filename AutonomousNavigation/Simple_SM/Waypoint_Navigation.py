@@ -44,7 +44,6 @@ class Waypoint_Navigation(smach.State):
 
 		current_lat = (sensors_data.current_latitude)
 		current_lon = (sensors_data.current_longitude)
-		#current_lon = (current_lon * (-1))   #We will be dealing with the West values only
 
 		Y_error = (goal_lat - current_lat)   #Y axis is Earth's N & S (unit of Lat degrees)
 		X_error = (goal_lon - current_lon)   #X axis is Earth's E & W (unit of Lon degrees)
@@ -94,7 +93,6 @@ class Waypoint_Navigation(smach.State):
 		self.setpoints.distance_setpoint = math.sqrt((Y_error ** 2) + (X_error ** 2))
 		print("Distance: "),
 		print(self.setpoints.distance_setpoint)
-
 		self.setpoints_pub.publish(self.setpoints)
 		time.sleep(1)
 		return 'Navigation_Completed'

@@ -1,3 +1,5 @@
+//Teleoperation code that uses joystick controller inputs to drive the rover with gradual speed increase.
+
 //Motor Driver Libraries
 #include <CustomDualG2HighPowerMotorShield.h>
 DualG2HighPowerMotorShield18v22 md;

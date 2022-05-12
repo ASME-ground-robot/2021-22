@@ -1,9 +1,10 @@
+//Motor Driver Libraries
 #include <CustomDualG2HighPowerMotorShield.h>
 DualG2HighPowerMotorShield18v22 md;
 
+//Rosserial Connection Library
 #include <ros.h>
 #include <std_msgs/Int16MultiArray.h>
-
 ros::NodeHandle nh;
 
 const int LED1 = 53; //Teleop LED-> ON
@@ -69,6 +70,8 @@ void messageCb(const std_msgs::Int16MultiArray &msg) {
     stopIfFault();
     }
   }
+  
+  //Problem with Controllers on Jetson that shaking it will cause buttons to be pressed so bottom codes don't work.
   /*
   else if (skidleft == 1) {
     md.enableDrivers();

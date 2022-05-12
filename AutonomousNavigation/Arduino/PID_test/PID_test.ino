@@ -1,8 +1,11 @@
+//Motor Driver Library
 #include <CustomDualG2HighPowerMotorShield.h>
 DualG2HighPowerMotorShield18v22 md;
 
+//PID Library
 #include <PID_v1.h>
 
+//Libraries for BNO055
 #include <Wire.h>
 #include <Adafruit_BNO055.h>
 #define BNO055_SAMPLERATE_DELAY_MS (100)

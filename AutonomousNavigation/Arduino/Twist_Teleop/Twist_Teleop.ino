@@ -1,9 +1,9 @@
 //Teleoperation code that uses Twist messages (linear/angular speeds in m/s) to drive rover. can be used for Autnav
 
+//Connection to ROS Library
 #include <ArduinoHardware.h>
 #include <ros.h>
 #include <geometry_msgs/Twist.h>
-
 ros::NodeHandle nh;
 
 // library to control motors
@@ -73,6 +73,7 @@ void loop() {
   md.enableDrivers();
   delay(1);
 
+  //Converts velocity commands from Twist messages to PWM values.
   int vel_l = w_l*10;
   int vel_r = w_r*10;
   

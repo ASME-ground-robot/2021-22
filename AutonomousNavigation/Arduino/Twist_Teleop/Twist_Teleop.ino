@@ -1,3 +1,5 @@
+//Teleoperation code that uses Twist messages (linear/angular speeds in m/s) to drive rover. can be used for Autnav
+
 #include <ArduinoHardware.h>
 #include <ros.h>
 #include <geometry_msgs/Twist.h>

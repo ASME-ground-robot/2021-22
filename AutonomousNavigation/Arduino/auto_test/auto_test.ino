@@ -1,16 +1,20 @@
+//Motor Driver Library
 #include <CustomDualG2HighPowerMotorShield.h>
 DualG2HighPowerMotorShield18v22 md;
 
+//Connection to ROS Library
 #include <ros.h>
 #include <rover/smach2controls.h>
 ros::NodeHandle nh;
 
+//BNO055 Library
 #include <Wire.h>
 #include <Adafruit_Sensor.h>
 #include <Adafruit_BNO055.h>
 #define BNO055_SAMPLERATE_DELAY_MS (100)
 Adafruit_BNO055 bno = Adafruit_BNO055();
 
+//PID Library Setup
 #include <PID_v1.h>
 double input = 0, output = 0, setpoint = 0;
 double kP = 5.5, kI = 1, kD = 0;
@@ -18,11 +22,13 @@ double kP = 5.5, kI = 1, kD = 0;
 PID Dist_PID (&input, &output, &setpoint, 
               kP, kI, kD, DIRECT);
 
+
 int i = 0;
 int count = 0;
 double goal_yaw;
 double goal_distance;
 
+//Accept Odometry Information from ROS
 /*
 void Goals(const rover::smach2controls& setpoint_data) {
   goal_yaw = setpoint_data.yaw_setpoint;
@@ -32,11 +38,13 @@ void Goals(const rover::smach2controls& setpoint_data) {
 ros::Subscriber <rover::smach2controls> sub("smach2controls", Goals);
 */
 
+//Encoder Setup
 #define ENCA A15
 int tick = 0;
 int currentstate;
 int laststate;
 
+//Stops motors if a failure is detected
 void stopIfFault() {
   if (md.getM1Fault()) {
     md.disableDrivers();
@@ -76,6 +84,7 @@ void setup() {
   //nh.subscribe(sub);
 }
 
+//Checks if BNO055 is working
 void InitializeSensor() {
   Wire.beginTransmission(0x28);
   if (!bno.begin()) {
@@ -97,9 +106,11 @@ void loop() {
 void Outputs() {
   md.enableDrivers();
   delay(1);
+  //Uncomment if not using ROS data (void Goals)
   goal_yaw = 5;
   goal_distance = 2;
   
+  //Starts turing process. Reads IMU value and checks whether its reached goal_yaw reading. Starts IMU process.
   if (count == 0) {
     imu::Vector<3> euler = bno.getVector(Adafruit_BNO055::VECTOR_EULER);
     float headingDeg = euler.x() + 0.08;
@@ -133,7 +144,7 @@ void Outputs() {
     }
   }
   
-  
+  //Starts traversal process. Reads ecoder data and determines whether goal_distance has been reached.
   if (count == 1) {
      currentstate = analogRead(ENCA);
      if (currentstate < laststate + 2) {

@@ -7,7 +7,7 @@ Codes are uploaded to the Arduino Atmega 2560.
 ## 2. Simulations
 Moveit! package to Gazebo simulation.
 - Gazebo package
-## 3. Moveit! package
+## 3. Scorbot-er III
 Robotic arm Moveit! package
 - launch
 -- scorbotrviz.launch

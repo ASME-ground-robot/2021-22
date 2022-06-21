@@ -1,3 +1,0 @@
-float32 current_yaw
-float32 current_latitude
-float32 current_longitude

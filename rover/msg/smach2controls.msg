@@ -1,0 +1,2 @@
+float32 distance_setpoint
+float32 yaw_setpoint

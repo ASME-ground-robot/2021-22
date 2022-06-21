@@ -1,0 +1,3 @@
+float32 current_lat
+float32 current_long
+float32 current_yaw

@@ -1,8 +1,0 @@
-prefix=/home/ros-industrial/scorbot1/install
-
-Name: myworkcell_core
-Description: Description of myworkcell_core
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/ros-industrial/scorbot1/install/lib 
-Requires: roscpp fake_ar_publisher

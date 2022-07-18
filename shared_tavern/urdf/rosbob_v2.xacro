@@ -168,7 +168,7 @@
 	<link name="robot_footprint"></link>
 
 	<!-- Camera -->
-	<link name="camera">
+	<!-- <link name="camera">
 		<inertial>
 			<mass value="${camera_mass}"/>
 			<origin xyz="0 0 0" rpy="0 0 0"/>
@@ -192,7 +192,7 @@
 				<box size="0.05 0.05 0.05"/>
 			</geometry>
 		</collision>
-	</link>
+	</link> -->
 
 	<!-- Hokuyo Lidar -->
 	<link name="hokuyo">
@@ -278,12 +278,12 @@
 	</joint>
 
 	<!-- Camera Joint -->
-	<joint name="camera_joint" type="fixed">
+	<!-- <joint name="camera_joint" type="fixed">
 		<origin xyz="0.25 0.1 0.4529" rpy="0 0 0" />
 		<parent link="base_link"/>
 		<child link="camera" />
 		<axis xyz="0 1 0"/>
-	</joint>
+	</joint> -->
 
 	<!-- Hokoyu Joint -->
 	<joint name="hokuyo_joint" type="fixed">
@@ -292,6 +292,23 @@
 	    <child link="hokuyo" />  
 	    <axis xyz="0 1 0"/> 
 	</joint>
+
+	<!-- JOIN ARM URDF !!!!!!!!!!!!!!!!!!-->
+
+	<joint name="arm_fixed_joint" type="fixed">
+      <parent link="base_link" />
+      <child link = "arm_link" />
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+    </joint>
+
+    <link name="arm_link">
+      <collision>
+        <geometry>
+          <box size="0.01 0.01 0.01"/>
+        </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+      </collision>
+    </link>
 
 
 	<!-- Color of bot -->

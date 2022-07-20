@@ -10,6 +10,7 @@ How to edit markdown files - https://www.markdownguide.org/cheat-sheet
  - - [Autonomous Navigation](#autonomous-navigation)
  - - [Making a Gazebo World](#making-a-gazebo-world)
  - - [Robotic Arm](#robotic-arm)
+ - - [Operating the Robotic Arm](#operating-the-robotic-arm)
  - [Installation instructions](#installation-instructions)
 
 
@@ -119,8 +120,26 @@ Packages from ROS used to control the robotic arm using simulations. Contains mi
 
 ![Gazebo Model](https://github.com/CSULA-URC/2021-22/blob/main/doc/gazebo_model.png)
 
+  ### Operating the Robotic Arm
 
+Directories: 
+ScorboTesting/src/scorbot_movelt/launch
+-	ScorboTesting is the name of the workspace 
+-	Scorbot_moveit is the name of the package 
 
+Steps: 
+1.	Arduino to Jetson 
+Open the Arduino Application Software
+Verify and upload the code file: R.A.6MotorPID
+
+![Robotic Arm Instructions 1](https://github.com/CSULA-URC/2021-22/blob/main/doc/roboticarm1.jpg)
+
+2.	Rosserial 
+	```
+{
+  rosrun rosserial_python serial_node.py_port:=/dev/ttyACM0_baud:=115200
+}
+```
 ## Installation instructions
 
   1. Open up a terminal on your linux machine.

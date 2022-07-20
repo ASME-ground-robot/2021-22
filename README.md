@@ -1,3 +1,11 @@
+# Contents
+ - [About](#about)
+ - [What's included in the package?](#package)
+ - [Introduction of the robot](#introduction-of-the-robot)
+ - [Software organization ](#software-organization)
+ - [Installation instructions](#installation-instructions)
+
+
 # About
 In collaboration with Cal State LA's Robotics Laboratory and ASME Student Org, our rover "Cali" is a multi-year senior design project built for the University Rover Challenge held annually in Utah. Both hardware and software were utilized to create Cali such as SolidWorks, Arduinos, and a Jetson TX2. Our framework is based on ROS using Ubuntu 18.04. 
 
@@ -5,11 +13,11 @@ In collaboration with Cal State LA's Robotics Laboratory and ASME Student Org, o
 ![Drive System](https://github.com/CSULA-URC/2021-22/blob/main/doc/Drive%20System%202.JPG)
 ![Suspension Bracket](https://github.com/CSULA-URC/2021-22/blob/main/doc/Suspension%20Bracket%202.JPG)
 
-## 1. What's included in the package?
+## Package
 - This package is a detailed outline of the software files needed to run the Senior Design Mars Rover from California State University, Los Angeles.
   The package is dedicated to ROS 1 and the Ubuntu version is 18.04.
   
-## 2. Introduction of the robot  
+## Introduction of the robot  
 
 "Cali" is a rover redesigned from the University Rover Challenge to a paper "Low cost mobile robotic arm". 
 
@@ -20,7 +28,7 @@ The electrical systems encompasses power, sensing, controls, and communications.
 - software - Ubuntu 18.04, ROS  
 - sensors - IMU, GPS, Lidar, Antenna, Transceiver, Camera, Encoders
 
-## 3. Software organization  
+## Software organization  
 
   ### Autonomous Navigation
   - All codes used to control hardware for the rover. Contains important microcontroller codes and libraries as well as codes for teleoperation using joystick, autonomous navigation, sensor data integration, computer vision, and necessary ROS files.
@@ -28,7 +36,7 @@ The electrical systems encompasses power, sensing, controls, and communications.
   ### Robotic Arm
   - Packages from ROS used to control the robotic arm using simulations. Contains microcontroller code, Moveit (Rviz) simulation packages, and Arm URDF model
 
-## 4. Installation instructions
+## Installation instructions
 
   1. Open up a terminal on your linux machine.
   2. mkdir -p ~/catkin_ws/src (some simulations/packages in the folder will need to be recreated because of workspace name change)

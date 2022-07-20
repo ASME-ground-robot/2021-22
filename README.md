@@ -1,6 +1,6 @@
 # About
 In collaboration with Cal State LA's Robotics Laboratory and ASME Student Org, our rover "Cali" is a multi-year senior design project built for the University Rover Challenge held annually in Utah. Both hardware and software were utilized to create Cali such as SolidWorks, Arduinos, and a Jetson TX2. Our framework is based on ROS using Ubuntu 18.04. 
-![Screenshot](Rover 2.JPG)
+![Alt text](/CSULA-URC/2021-22/doc/Rover 2.jpg?raw=true "Optional Title")
 
 # 2021-22 version of software for the Mars Rover Senior Design Project at Cal State LA (Robotics Laboratory, ASME Student Org)
 How to edit markdown files - https://www.markdownguide.org/cheat-sheet

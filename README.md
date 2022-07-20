@@ -52,6 +52,7 @@ Brief descriptions of each folder. For more detailed information, please look at
   
 ![ECST Lab](https://github.com/CSULA-URC/2021-22/blob/main/doc/ecst_lab_world.png)
 ![Sandbox](https://github.com/CSULA-URC/2021-22/blob/main/doc/Sand_box_world.png)
+![Wooden Box](https://github.com/CSULA-URC/2021-22/blob/main/doc/Wooden_box_world.png)
 
   ### Robotic Arm
   - Packages from ROS used to control the robotic arm using simulations. Contains microcontroller code, Moveit (Rviz) simulation packages, and Arm URDF model

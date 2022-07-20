@@ -7,6 +7,9 @@ How to edit markdown files - https://www.markdownguide.org/cheat-sheet
  - [Introduction of the robot](#introduction-of-the-robot)
  - [Software organization](#software-organization)
  - [Simulation](#simulation)
+ - - [Autonomous Navigation](#autonomous-navigation)
+ - - [Making a Gazebo World](#making-a-gazebo-world)
+ - - [Robotic Arm](#robotic-arm)
  - [Installation instructions](#installation-instructions)
 
 
@@ -48,16 +51,75 @@ Brief descriptions of each folder. For more detailed information, please look at
 
 ## Simulation
   ### Autonomous Navigation
-  - All codes used to control hardware for the rover. Contains important microcontroller codes and libraries as well as codes for teleoperation using joystick, autonomous navigation, sensor data integration, computer vision, and necessary ROS files.
+All codes used to control hardware for the rover. Contains important microcontroller codes and libraries as well as codes for teleoperation using joystick, autonomous navigation, sensor data integration, computer vision, and necessary ROS files.
   
 ![ECST Lab](https://github.com/CSULA-URC/2021-22/blob/main/doc/ecst_lab_world.png)
 ![Sandbox](https://github.com/CSULA-URC/2021-22/blob/main/doc/Sand_box_world.png)
 ![Wooden Box](https://github.com/CSULA-URC/2021-22/blob/main/doc/Wooden_box_world.png)
+  #### Making a Gazebo World
+  To launch an empty world in gazebo:
+   - open a terminal 
+   - type gazebo
+   - press the key enter, this will open the Gazebo application with an empty world environment 
+
+![Gazebo Instructions 1](https://github.com/CSULA-URC/2021-22/blob/main/doc/gazebo_instruct1.jpg)
+  
+Next on the top left, access the edit category and select Building Editor
+  
+![Gazebo Instructions 2](https://github.com/CSULA-URC/2021-22/blob/main/doc/gazebo_instruct2.jpg)
+  
+This should show below: 
+ 
+![Gazebo Instructions 3](https://github.com/CSULA-URC/2021-22/blob/main/doc/gazebo_instruct3.jpg)
+
+NOTE: This tutorial assumes the user has a “blueprint” of the model. If not, then the user can customize to their needs as shown on the left.  
+
+Using a blueprint image of a map, the user can import it to show on the white square grid above. 
+Note that importing an image is only supported by the following formats: .jpg and .png
+
+![Gazebo Instructions 4](https://github.com/CSULA-URC/2021-22/blob/main/doc/gazebo_instruct4.jpg)
+
+Once imported, a scale of the map is needed for proportional consistency of the real-world to the simulations. 
+
+![Gazebo Instructions 5](https://github.com/CSULA-URC/2021-22/blob/main/doc/gazebo_instruct5.jpg)
+![Gazebo Instructions 6](https://github.com/CSULA-URC/2021-22/blob/main/doc/gazebo_instruct6.jpg)
+
+Now, simply trace the obstacles on the white grid with the wall option. This represents the areas where laser scans would bounce to emit back data. 
+
+Once the map environment is traced with walls, the user has an option to decorate the barriers with color or visual textures such as a brick wall. 
+
+![Gazebo Instructions 7](https://github.com/CSULA-URC/2021-22/blob/main/doc/gazebo_instruct7.jpg)
+![Gazebo Instructions 8](https://github.com/CSULA-URC/2021-22/blob/main/doc/gazebo_instruct8.jpg)
+![Gazebo Instructions 9](https://github.com/CSULA-URC/2021-22/blob/main/doc/gazebo_instruct9.jpg)
+![Gazebo Instructions 10](https://github.com/CSULA-URC/2021-22/blob/main/doc/gazebo_instruct10.jpg)
+
+To save the model, access the file category on the top left and provide a name of choice including the directory
+
+Note: this only saves the environment as a model and not a world. So be careful to leave the pop up window as the model cannot be edited once exiting. 
+
+This saves the model in the building editor folder directory but can be customized to save in whichever folder desired
+
+![Gazebo Instructions 11](https://github.com/CSULA-URC/2021-22/blob/main/doc/gazebo_instruct11.jpg)
+
+To include items such as a coke can, access the insert category and from the huge number of options, place items by dragging the option to the world environment. 
+
+![Gazebo Instructions 12](https://github.com/CSULA-URC/2021-22/blob/main/doc/gazebo_instruct12.jpg)
+
+To save a world, access the file category and select save world as 
+save the end of your file as .world 
+
+![Gazebo Instructions 13](https://github.com/CSULA-URC/2021-22/blob/main/doc/gazebo_instruct13.jpg)
+![Gazebo Instructions 14](https://github.com/CSULA-URC/2021-22/blob/main/doc/gazebo_instruct14.jpg)
+
+
+
 
   ### Robotic Arm
-  - Packages from ROS used to control the robotic arm using simulations. Contains microcontroller code, Moveit (Rviz) simulation packages, and Arm URDF model
+Packages from ROS used to control the robotic arm using simulations. Contains microcontroller code, Moveit (Rviz) simulation packages, and Arm URDF model
 
 ![Gazebo Model](https://github.com/CSULA-URC/2021-22/blob/main/doc/gazebo_model.png)
+
+
 
 ## Installation instructions
 

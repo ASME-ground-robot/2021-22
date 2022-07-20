@@ -57,6 +57,8 @@ Brief descriptions of each folder. For more detailed information, please look at
   ### Robotic Arm
   - Packages from ROS used to control the robotic arm using simulations. Contains microcontroller code, Moveit (Rviz) simulation packages, and Arm URDF model
 
+![Gazebo Model](https://github.com/CSULA-URC/2021-22/blob/main/doc/gazebo_model.png)
+
 ## Installation instructions
 
   1. Open up a terminal on your linux machine.

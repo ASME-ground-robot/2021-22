@@ -2,7 +2,8 @@
  - [About](#about)
  - [What's included in the package?](#package)
  - [Introduction of the robot](#introduction-of-the-robot)
- - [Software organization ](#software-organization)
+ - [Software organization](#software-organization)
+ - [Simulation](#simulation)
  - [Installation instructions](#installation-instructions)
 
 
@@ -30,6 +31,19 @@ The electrical systems encompasses power, sensing, controls, and communications.
 
 ## Software organization  
 
+Brief descriptions of each folder. For more detailed information, please look at folder's readme files. (Will create soon)
+
+  - hector_slam: package that uses lidar laser data to scan an environment and create a grayscale 2d map
+  - microcontroller: all arduino codes used to control the robot and arm
+  - ros-imu-bno055: package that lets us read all imu data and represent it in rviz
+  - rover: all misc. files worked on the robot like teleoperation, opencv, etc.
+  - rover_autonav: all the autonomous navigation simulations used for this project
+  - rplidar_ros: package to get the rplidara1 to work with ros
+  - scorbot: visualization and controls of the robotic arm
+  - shared_tavern: used as a sharing folder to share files
+  - doc: screenshots and images
+
+## Simulation
   ### Autonomous Navigation
   - All codes used to control hardware for the rover. Contains important microcontroller codes and libraries as well as codes for teleoperation using joystick, autonomous navigation, sensor data integration, computer vision, and necessary ROS files.
 

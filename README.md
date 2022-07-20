@@ -1,3 +1,6 @@
+# 2021-22 version of software for the Mars Rover Senior Design Project at Cal State LA (Robotics Laboratory, ASME Student Org)
+How to edit markdown files - https://www.markdownguide.org/cheat-sheet
+
 # Contents
  - [About](#about)
  - [What's included in the package?](#package)
@@ -64,5 +67,3 @@ Brief descriptions of each folder. For more detailed information, please look at
   7. cd ~/catkin_ws/
   8. source devel/setup.bash
   
-# 2021-22 version of software for the Mars Rover Senior Design Project at Cal State LA (Robotics Laboratory, ASME Student Org)
-How to edit markdown files - https://www.markdownguide.org/cheat-sheet

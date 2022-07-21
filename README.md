@@ -135,11 +135,33 @@ Verify and upload the code file: R.A.6MotorPID
 ![Robotic Arm Instructions 1](https://github.com/CSULA-URC/2021-22/blob/main/doc/roboticarm1.jpg)
 
 2.	Rosserial 
-	```
-{
-  rosrun rosserial_python serial_node.py_port:=/dev/ttyACM0_baud:=115200
-}
+
+Connects ROS to Arduino using rosserial
 ```
+  rosrun rosserial_python serial_node.py_port:=/dev/ttyACM0_baud:=115200
+```
+
+3.	Open a new terminal 
+
+Go to ScorboTesting 
+```
+  source devel/setup.bash
+  roslaunch scorbot_moveit demo.launch 
+```
+Before moving the robotic arm through simulation, make sure to manually position the arm close to #^o and the end effector slightly pointing up. An example of this is shown below: 
+
+![Robotic Arm Instructions 2](https://github.com/CSULA-URC/2021-22/blob/main/doc/roboticarm2.jpg) ![Robotic Arm Instructions 3](https://github.com/CSULA-URC/2021-22/blob/main/doc/roboticarm3.jpg)
+
+![Robotic Arm Instructions 4](https://github.com/CSULA-URC/2021-22/blob/main/doc/roboticarm4.jpg)
+
+Motion the ball located in between the gears of the end-effector
+
+![Robotic Arm Instructions 5](https://github.com/CSULA-URC/2021-22/blob/main/doc/roboticarm5.jpg) ![Robotic Arm Instructions 5](https://github.com/CSULA-URC/2021-22/blob/main/doc/roboticarm5.jpg)
+
+Planning and executing poses are now permissible 
+
+
+
 ## Installation instructions
 
   1. Open up a terminal on your linux machine.

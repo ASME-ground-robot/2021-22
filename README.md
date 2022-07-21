@@ -20,6 +20,9 @@ In collaboration with Cal State LA's Robotics Laboratory and ASME Student Org, o
 ![Rover Overview](https://github.com/CSULA-URC/2021-22/blob/main/doc/Rover%202.JPG)
 ![Drive System](https://github.com/CSULA-URC/2021-22/blob/main/doc/Drive%20System%202.JPG)
 ![Suspension Bracket](https://github.com/CSULA-URC/2021-22/blob/main/doc/Suspension%20Bracket%202.JPG)
+![Robotic Arm Use](https://github.com/CSULA-URC/2021-22/blob/main/doc/roboticarmgif3.gif)
+![Teleoperation](https://github.com/CSULA-URC/2021-22/blob/main/doc/rovergif1.gif)
+
 
 ## Package
 - This package is a detailed outline of the software files needed to run the Senior Design Mars Rover from California State University, Los Angeles.

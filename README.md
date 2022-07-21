@@ -34,7 +34,10 @@ In collaboration with Cal State LA's Robotics Laboratory and ASME Student Org, o
 
 The mechanical systems encompasses the chassis, suspension system, and drive system. The chassis consists of 1"x1" galvanized steel bolt together tubing for modularity. The suspension system consists of an independent radius arm setup with air shock absorbers for off road capabilities. The drive systems consists of 12V motors with 9" beach wheels for sandy and rocky terrain.
 
-The electrical systems encompasses power, sensing, controls, and communications. A 12V 50ah li-on battery is used to power
+The electrical systems encompasses power, sensing, controls, and communications. A 12V 50ah li-on battery is used to power all electronics on the rover with buck and boost converters for voltage differences. Sensing comprises of a 3-D camera, 2-D lidar, absolute encoders, an IMU, and a gps all used to sense and navigate its surroundings. The control system uses microcontrollers, microprocessors, and motor drivers to operate and drive the robot. The communication system uses an omni directional antenna connected through a network system via router for wireless teleoperation.
+
+The software system uses ROS, Rviz, and Gazebo...
+
 - hardware - Jetson TX II, four individually controlled wheels, one robot arm (scorbot-er3u)  
 - software - Ubuntu 18.04, ROS  
 - sensors - IMU, GPS, Lidar, Antenna, Transceiver, Camera, Encoders

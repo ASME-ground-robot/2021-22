@@ -11,6 +11,7 @@ How to edit markdown files - https://www.markdownguide.org/cheat-sheet
  - - [Making a Gazebo World](#making-a-gazebo-world)
  - - [Robotic Arm](#robotic-arm)
  - - [Operating the Robotic Arm](#operating-the-robotic-arm)
+ - - [Perception](#perception)
  - [Installation instructions](#installation-instructions)
 
 
@@ -165,6 +166,11 @@ Motion the ball located in between the gears of the end-effector
 ![Robotic Arm Instructions 5](https://github.com/CSULA-URC/2021-22/blob/main/doc/roboticarm5.jpg) ![Robotic Arm Instructions 5](https://github.com/CSULA-URC/2021-22/blob/main/doc/roboticarm5.jpg)
 
 Planning and executing poses are now permissible 
+
+ ### Perception
+In order too sense Cali's surroundings, a 3-D camera is used to map the area around the rover. The specific type of 3-D camera used is the Intel Realsense d435. The data will then be used in ROS via a topic.
+
+
 
 
 

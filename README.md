@@ -16,10 +16,10 @@ How to edit markdown files - https://www.markdownguide.org/cheat-sheet
 
 
 # About
-Robot "Cali" is an open-source robotic platform for research and education. The robot is made of off-the-shelf components and integrates many open-source software packages. The robot has a embodided construct and a digital twin, allowing researchers and educators to develop and test their algorithms in both a simulated enviornment and the real world. 
-<img src="https://github.com/CSULA-URC/2021-22/blob/main/doc/Rover%202.JPG" height="400" />
-<img src="https://github.com/CSULA-URC/2021-22/blob/main/doc/rovergif1.gif" height="200" />
-<img src="https://github.com/CSULA-URC/2021-22/blob/main/doc/roboticarmgif3.gif" height="200" />
+Robot "Cali" is an open-source robotic platform for research and education. The robot is made of off-the-shelf components and integrates many open-source software packages. The robot has a embodided construct and a digital twin, allowing researchers and educators to develop and test their algorithms in both a simulated enviornment and the real world.  
+<img src="https://github.com/CSULA-URC/2021-22/blob/main/doc/Rover%202.JPG" width="600" />
+<img src="https://github.com/CSULA-URC/2021-22/blob/main/doc/rovergif1.gif" width="600" />
+<img src="https://github.com/CSULA-URC/2021-22/blob/main/doc/roboticarmgif3.gif" width="600" />
 
 # System at a glance
 - hardware - four wheel drive platform, one robot arm (scorbot-er3u)  

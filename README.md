@@ -16,7 +16,8 @@ How to edit markdown files - https://www.markdownguide.org/cheat-sheet
 
 
 # About
-In collaboration with Cal State LA's Robotics Laboratory and ASME Student Org, our rover "Cali" is a multi-year senior design project built for the University Rover Challenge held annually in Utah. Both hardware and software were utilized to create Cali such as SolidWorks, Arduinos, and a Jetson TX2. Our framework is based on ROS using Ubuntu 18.04. 
+Robot "Cali" is an open-source robotic platform for research and education. The robot is made of off-the-shelf components and integrates many open-source software packages. The robot has a embodided construct and a digital twin, allowing researchers and educators to develop and test their algorithms in both a simulated enviornment and the real world. 
+
 
 ![Rover Overview](https://github.com/CSULA-URC/2021-22/blob/main/doc/Rover%202.JPG)
 ![Drive System](https://github.com/CSULA-URC/2021-22/blob/main/doc/Drive%20System%202.JPG)
@@ -175,6 +176,7 @@ In order too sense Cali's surroundings, a 3-D camera is used to map the area aro
 
 
 ## Installation instructions
+The software is based on ROS-Melodic on Ubuntu 18.04. 
 
   1. Open up a terminal on your linux machine.
   2. mkdir -p ~/catkin_ws/src (some simulations/packages in the folder will need to be recreated because of workspace name change)

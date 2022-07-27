@@ -167,11 +167,9 @@ In order too sense Cali's surroundings, a 3-D camera is used to map the area aro
 The software is based on ROS-Melodic on Ubuntu 18.04. 
 
   1. Open up a terminal on your linux machine.
-  2. mkdir -p ~/catkin_ws/src (some simulations/packages in the folder will need to be recreated because of workspace name change)
-  3. cd ~/catkin_ws/
-  4. catkin_make
-  5. cd ~/catkin_ws/src
-  6. git clone https://github.com/j-505/2021-22.git
-  7. cd ~/catkin_ws/
-  8. source devel/setup.bash
+  2. mkdir -p ~/catkin_ws/src
+  3. git clone https://github.com/CSULA-URC/2021-22.git (in src folder)
+  4. cd ~/catkin_ws/
+  5. catkin_make
+  6. source devel/setup.bash
   

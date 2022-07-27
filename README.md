@@ -18,31 +18,22 @@ How to edit markdown files - https://www.markdownguide.org/cheat-sheet
 # About
 Robot "Cali" is an open-source robotic platform for research and education. The robot is made of off-the-shelf components and integrates many open-source software packages. The robot has a embodided construct and a digital twin, allowing researchers and educators to develop and test their algorithms in both a simulated enviornment and the real world. 
 
-
 ![Rover Overview](https://github.com/CSULA-URC/2021-22/blob/main/doc/Rover%202.JPG)
 ![Drive System](https://github.com/CSULA-URC/2021-22/blob/main/doc/Drive%20System%202.JPG)
 ![Suspension Bracket](https://github.com/CSULA-URC/2021-22/blob/main/doc/Suspension%20Bracket%202.JPG)
 ![Robotic Arm Use](https://github.com/CSULA-URC/2021-22/blob/main/doc/roboticarmgif3.gif)
 ![Teleoperation](https://github.com/CSULA-URC/2021-22/blob/main/doc/rovergif1.gif)
 
-
-## Package
-- This package is a detailed outline of the software files needed to run the Senior Design Mars Rover from California State University, Los Angeles.
-  The package is dedicated to ROS 1 and the Ubuntu version is 18.04.
-  
-## Introduction of the robot  
-
-"Cali" is a rover redesigned from the University Rover Challenge to a paper "Low cost mobile robotic arm". 
+# System at a glance
+- hardware - four wheel drive platform, one robot arm (scorbot-er3u)  
+- software - Ubuntu 18.04, ROS, and packages (Rviz, Gazebo, opencv, ...)  
+- computer - Jetson TX2
+- sensors - IMU, GPS, Lidar, Antenna, Transceiver, Camera, Encoders
 
 The mechanical systems encompasses the chassis, suspension system, and drive system. The chassis consists of 1"x1" galvanized steel bolt together tubing for modularity. The suspension system consists of an independent radius arm setup with air shock absorbers for off road capabilities. The drive systems consists of 12V motors with 9" beach wheels for sandy and rocky terrain.
 
 The electrical systems encompasses power, sensing, controls, and communications. A 12V 50ah li-on battery is used to power all electronics on the rover with buck and boost converters for voltage differences. Sensing comprises of a 3-D camera, 2-D lidar, absolute encoders, an IMU, and a gps all used to sense and navigate its surroundings. The control system uses microcontrollers, microprocessors, and motor drivers to operate and drive the robot. The communication system uses an omni directional antenna connected through a network system via router for wireless teleoperation.
 
-The software system uses ROS, Rviz, and Gazebo...
-
-- hardware - Jetson TX II, four individually controlled wheels, one robot arm (scorbot-er3u)  
-- software - Ubuntu 18.04, ROS  
-- sensors - IMU, GPS, Lidar, Antenna, Transceiver, Camera, Encoders
 
 ## Software organization  
 

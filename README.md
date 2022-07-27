@@ -1,4 +1,4 @@
-# Ground robot Cali (version 2021-22), Robotics Laboratory, California State University, Los Angeles
+# Ground robot "Cali" (version 2021-22), Robotics Laboratory, California State University, Los Angeles
 How to edit markdown files - https://www.markdownguide.org/cheat-sheet
 
 # Contents

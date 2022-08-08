@@ -1,6 +1,7 @@
 # Ground Robot "Cali" (version 2021-22)
+American Society of Mechanical Engineers at Cal State LA  
 Robotics Laboratory, California State University, Los Angeles
-American Society of Mechanical Engineers at Cal State LA
+
 How to edit markdown files - https://www.markdownguide.org/cheat-sheet
 
 # Contents

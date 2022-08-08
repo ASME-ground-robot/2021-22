@@ -52,10 +52,8 @@ Brief descriptions of each folder. For more detailed information, please look at
 ## Simulation
   ### Autonomous Navigation
 All codes used to control hardware for the rover. Contains important microcontroller codes and libraries as well as codes for teleoperation using joystick, autonomous navigation, sensor data integration, computer vision, and necessary ROS files.
-  
-![ECST Lab](https://github.com/CSULA-URC/2021-22/blob/main/doc/ecst_lab_world.png)
-![Sandbox](https://github.com/CSULA-URC/2021-22/blob/main/doc/Sand_box_world.png)
-![Wooden Box](https://github.com/CSULA-URC/2021-22/blob/main/doc/Wooden_box_world.png)
+<img src="https://github.com/CSULA-URC/2021-22/blob/main/doc/ecst_lab_world.png" width="600" />  
+
   #### Making a Gazebo World
   To launch an empty world in gazebo:
    - open a terminal 

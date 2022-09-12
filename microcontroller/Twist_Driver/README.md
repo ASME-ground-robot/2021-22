@@ -1,5 +1,5 @@
 How to Use:
-note: First download the packages: teleop_twist_joy & joy (to use with joystick), teleop_twist_keyboard (to use with keyboard), rqt_robot_steering, rosserial
+ note: First download the packages: teleop_twist_joy & joy (to use with joystick), teleop_twist_keyboard (to use with keyboard), rqt_robot_steering, rosserial
 
 - upload Twist_Driver to Arduino
 - in terminal, run "roscore"
